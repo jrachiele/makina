@@ -30,7 +30,7 @@ public final class NoLineSearch implements LineSearch {
      * provided step size. The step size is computed as (tau + i + 1) ^ (-kappa), where i is the current iteration
      * number in the optimization algorithm.
      *
-     * @param   tau     The tau parameter which much be >=0.
+     * @param   tau     The tau parameter which much be &gt;=0.
      * @param   kappa   The kappa parameter which must lie in (0.5,1].
      */
     public NoLineSearch(double tau, double kappa) {

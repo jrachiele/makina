@@ -164,7 +164,7 @@ public final class ConsensusADMMSolver extends AbstractIterativeSolver {
         /**
          * Note that this parameter is not used if the sub-problem selection method is set to
          * {@link SubProblemSelectionMethod#ALL} (which is the default setting). If a high sub-sampling ratio is used,
-         * it is suggested that the value of {@link this#mu} be higher.
+         * it is suggested that the value of {@link #mu} be higher.
          *
          * @param   numberOfSubProblemSamples
          * @return

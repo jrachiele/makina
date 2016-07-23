@@ -4,7 +4,7 @@ import makina.math.matrix.Matrix;
 import makina.math.matrix.Vector;
 
 /**
- * A linear inequality constraint of the form \(a'x<=b\).
+ * A linear inequality constraint of the form \(a'x&lt;=b\).
  *
  * @author Emmanouil Antonios Platanios
  */

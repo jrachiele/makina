@@ -12,7 +12,7 @@ import java.util.*;
 import java.util.function.Function;
 
 /**
- * TODO: Change the code so that we have one data set over everything with a List<Label> as its label type, or something
+ * TODO: Change the code so that we have one data set over everything with a List&lt;Label&gt; as its label type, or something
  * like that.
  *
  * @author Emmanouil Antonios Platanios

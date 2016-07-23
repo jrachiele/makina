@@ -157,7 +157,7 @@ public class Vectors {
     /**
      * Constructs a sparse vector from a dense vector. This constructor does not simply transform the dense vector
      * structure into a sparse vector structure, but it also throws away elements of the dense vector that have a computeValue
-     * effectively 0 (i.e., absolute computeValue \(<\epsilon\), where \(\epsilon\) is the square root of the smallest possible
+     * effectively 0 (i.e., absolute computeValue &epsilon;, where &epsilon; is the square root of the smallest possible
      * computeValue that can be represented by a double precision floating point number).
      *
      * @param   vector  The dense vector from which to construct this sparse vector.
