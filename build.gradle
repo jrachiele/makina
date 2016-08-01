@@ -15,6 +15,54 @@ subprojects {
     apply plugin: 'java'
     apply plugin: 'scala'
     apply plugin: 'com.google.protobuf'
+    apply plugin: 'eclipse'
+    eclipse {
+            classpath {
+                downloadSources = false;            
+                // Following block of code is to remove .pom classpath entries in .classpath files 
+                file {
+                    whenMerged { classpath ->
+                        Iterator i = classpath.entries.iterator()
+                        while (i.hasNext()) {
+                            org.gradle.plugins.ide.eclipse.model.ClasspathEntry classpathEntry = i.next()
+                            if(classpathEntry.kind.equals('lib') && classpathEntry.path.endsWith(".pom")) {
+                                println('Removing ' + classpathEntry + ' from classpath entry')
+                                i.remove()
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+    version = '0.1'
+
+    repositories {
+        mavenCentral()
+    }
+    
+    task generateJavadoc(type: Javadoc) {
+    source = sourceSets.main.allJava
+    classpath = sourceSets.main.compileClasspath
+    options.memberLevel = JavadocMemberLevel.PACKAGE
+    }
+    
+    task sourcesJar(type: Jar, dependsOn: classes) {
+        classifier = 'sources'
+        from sourceSets.main.allSource
+    }
+
+    task javadocJar(type: Jar, dependsOn: javadoc) {
+        classifier = 'javadoc'
+        from javadoc.destinationDir
+    }
+
+    artifacts {
+        archives sourcesJar
+        archives javadocJar
+    }
 
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
