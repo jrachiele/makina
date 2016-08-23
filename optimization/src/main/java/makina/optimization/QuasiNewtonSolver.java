@@ -23,6 +23,16 @@ public final class QuasiNewtonSolver extends AbstractLineSearchSolver {
     private Vector initialHessianInverseDiagonal = Vectors.dense(currentPoint.size(), 1);
 
     private double symmetricRankOneSkippingParameter = 1e-8;
+    
+    public Vector currentPoint() {
+    	return currentPoint;
+    }
+    public final double currentValue() {
+    	return currentObjectiveValue;
+    }
+    public final Matrix currentH() {
+    	return this.currentH;
+    }
 
     protected static abstract class AbstractBuilder<T extends AbstractBuilder<T>>
             extends AbstractLineSearchSolver.AbstractBuilder<T> {

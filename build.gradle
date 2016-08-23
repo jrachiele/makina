@@ -42,6 +42,11 @@ subprojects {
         options.fork = true
         options.forkOptions.executable = 'javac'
     }
+    
+    task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
 
     protobuf {
         protoc {
